@@ -40,6 +40,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SeedDisplay
-          path: |
-            libs/arm64-v8a/libSeedDisplay.so
-            libs/armeabi-v7a/libSeedDisplay.so
+          path: libs/arm64-v8a/libSeedDisplay.so
