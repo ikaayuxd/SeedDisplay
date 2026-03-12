@@ -1,13 +1,11 @@
 LOCAL_PATH := $(call my-dir)
 
-# ── libBedrockTools (prebuilt — provides GlossHook + ImGui + memory utils) ───
 include $(CLEAR_VARS)
 LOCAL_MODULE            := BedrockTools
-LOCAL_SRC_FILES         := libs/$(TARGET_ARCH_ABI)/libBedrockTools.so
+LOCAL_SRC_FILES         := libs/arm64-v8a/libBedrockTools.so
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
 include $(PREBUILT_SHARED_LIBRARY)
 
-# ── SeedDisplay ───────────────────────────────────────────────────────────────
 include $(CLEAR_VARS)
 LOCAL_MODULE        := SeedDisplay
 LOCAL_SRC_FILES     := main.cpp
