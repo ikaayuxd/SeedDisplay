@@ -26,6 +26,9 @@ jobs:
           curl -sL ${BASE}/imgui.h                          -o jni/imgui/imgui.h
           curl -sL ${BASE}/imgui_internal.h                 -o jni/imgui/imgui_internal.h
           curl -sL ${BASE}/imconfig.h                       -o jni/imgui/imconfig.h
+          curl -sL ${BASE}/imstb_textedit.h                 -o jni/imgui/imstb_textedit.h
+          curl -sL ${BASE}/imstb_truetype.h                 -o jni/imgui/imstb_truetype.h
+          curl -sL ${BASE}/imstb_rectpack.h                 -o jni/imgui/imstb_rectpack.h
           curl -sL ${BASE}/imgui.cpp                        -o jni/imgui/imgui.cpp
           curl -sL ${BASE}/imgui_draw.cpp                   -o jni/imgui/imgui_draw.cpp
           curl -sL ${BASE}/imgui_tables.cpp                 -o jni/imgui/imgui_tables.cpp
