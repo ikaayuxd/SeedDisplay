@@ -1,0 +1,32 @@
+name: Build SeedDisplay Standalone
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Android NDK r26b
+        uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r26b
+          add-to-path: true
+
+      - name: Build
+        run: |
+          ndk-build NDK_PROJECT_PATH=. \
+                    APP_BUILD_SCRIPT=jni/Android.mk \
+                    NDK_APPLICATION_MK=jni/Application.mk \
+                    -j$(nproc)
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: SeedDisplay
+          path: libs/arm64-v8a/libSeedDisplay.so
