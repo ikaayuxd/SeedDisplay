@@ -18,16 +18,22 @@ jobs:
           ndk-version: r26b
           add-to-path: true
 
-      - name: Fetch ImGui headers
+      - name: Fetch ImGui sources
         run: |
           mkdir -p jni/imgui
           TAG=v1.90
           BASE=https://raw.githubusercontent.com/ocornut/imgui/${TAG}
-          curl -sL ${BASE}/imgui.h                       -o jni/imgui/imgui.h
-          curl -sL ${BASE}/imgui_internal.h              -o jni/imgui/imgui_internal.h
-          curl -sL ${BASE}/imconfig.h                    -o jni/imgui/imconfig.h
-          curl -sL ${BASE}/backends/imgui_impl_opengl3.h -o jni/imgui/imgui_impl_opengl3.h
-          curl -sL ${BASE}/backends/imgui_impl_android.h -o jni/imgui/imgui_impl_android.h
+          curl -sL ${BASE}/imgui.h                          -o jni/imgui/imgui.h
+          curl -sL ${BASE}/imgui_internal.h                 -o jni/imgui/imgui_internal.h
+          curl -sL ${BASE}/imconfig.h                       -o jni/imgui/imconfig.h
+          curl -sL ${BASE}/imgui.cpp                        -o jni/imgui/imgui.cpp
+          curl -sL ${BASE}/imgui_draw.cpp                   -o jni/imgui/imgui_draw.cpp
+          curl -sL ${BASE}/imgui_tables.cpp                 -o jni/imgui/imgui_tables.cpp
+          curl -sL ${BASE}/imgui_widgets.cpp                -o jni/imgui/imgui_widgets.cpp
+          curl -sL ${BASE}/backends/imgui_impl_opengl3.h    -o jni/imgui/imgui_impl_opengl3.h
+          curl -sL ${BASE}/backends/imgui_impl_opengl3.cpp  -o jni/imgui/imgui_impl_opengl3.cpp
+          curl -sL ${BASE}/backends/imgui_impl_android.h    -o jni/imgui/imgui_impl_android.h
+          curl -sL ${BASE}/backends/imgui_impl_android.cpp  -o jni/imgui/imgui_impl_android.cpp
 
       - name: Build
         run: |
