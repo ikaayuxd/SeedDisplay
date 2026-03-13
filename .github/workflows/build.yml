@@ -30,3 +30,20 @@ jobs:
         with:
           name: SeedDisplay
           path: libs/arm64-v8a/libSeedDisplay.so
+```
+
+---
+
+**`jni/main.cpp`** — download from the file above ☝️
+
+---
+
+**Your full repo should look like this:**
+```
+jni/
+├── main.cpp
+├── Android.mk
+└── Application.mk
+.github/
+└── workflows/
+    └── build.yml
